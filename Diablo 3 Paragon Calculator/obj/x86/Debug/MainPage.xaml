@@ -1,0 +1,98 @@
+﻿<Page
+    x:Class="Diablo_3_Paragon_Calculator.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Diablo_3_Paragon_Calculator"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" RequestedTheme="Dark"  >
+    <Page.BottomAppBar>
+        <CommandBar>
+            <AppBarButton x:ConnectionId='1' x:Name="settingsBtn" Icon="Help"                           Label="About"/>
+            <AppBarButton x:ConnectionId='2' x:Name="shareBtn" Label="Share"                            HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                <AppBarButton.Icon>
+                    <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE72D;"/>
+                </AppBarButton.Icon>
+            </AppBarButton>
+            <AppBarButton x:ConnectionId='3' x:Name="calcBtn" Icon="Calculator"                       Label="Calculator"/>
+        </CommandBar>
+    </Page.BottomAppBar>
+
+    <Grid >
+        <Grid.Background>
+            <ImageBrush Stretch="UniformToFill" ImageSource="Assets/bg.jpg"/>
+        </Grid.Background>
+
+        <Grid x:ConnectionId='4' x:Name="Main">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <!-- Title-->
+                <RowDefinition/>
+                <!-- Non Seasonal-->
+                <RowDefinition/>
+                <!--Season-->
+                <RowDefinition/>
+                <!--Button-->
+                <RowDefinition/>
+                <!--Result-->
+                <RowDefinition/>
+                <!--HelpBtns-->
+            </Grid.RowDefinitions>
+            <!--Title Start-->
+            <Viewbox Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Bottom" RequestedTheme="Dark" >
+                <TextBlock x:ConnectionId='12' x:Name="titleText" Text="Diablo 3 Paragon Calculator" FontWeight="Bold" FontSize="10" Margin="4" VerticalAlignment="Bottom"/>
+            </Viewbox>
+            <!--Title End-->
+            <!--Seasonal Level Start-->
+            <Viewbox Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" RequestedTheme="Dark">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <TextBlock x:ConnectionId='10' x:Name="seasonText" Text="Your Seasonal Paragon level:" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="4"/>
+                    <TextBox x:ConnectionId='11' x:Name="seasonalBox" PlaceholderText="Your Seasonal Paragon level" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="4"/>
+                </Grid>
+            </Viewbox>
+            <!--Seasonal Level End-->
+
+            <!--Non Seasonal Level Start-->
+            <Viewbox Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" RequestedTheme="Dark">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <TextBlock x:ConnectionId='8' x:Name="nonSeasonalText" Text="Your Non-Seasonal Paragon level:" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="4"/>
+                    <TextBox x:ConnectionId='9' x:Name="nonseasonalBox" PlaceholderText="Your Non-Seasonal Paragon level" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="4" RequestedTheme="Dark"/>
+                </Grid>
+            </Viewbox>
+            <!--Non Seasonal Level End-->
+            <!--Calculate Button Start-->
+            <Viewbox Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center" RequestedTheme="Dark">
+                <Grid>
+                    <Button x:ConnectionId='7' x:Name="proceedBtn" Content="Calculate"                           Margin="30"/>
+                </Grid>
+            </Viewbox>
+            <!--Calculate Button End-->
+            <!--Result Level Start-->
+            <Viewbox Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Center" RequestedTheme="Dark">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <TextBlock x:ConnectionId='5' x:Name="resultText" Text="Your level after Season end:" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="4" RequestedTheme="Dark"/>
+                    <TextBox x:ConnectionId='6' x:Name="resaultBox" PlaceholderText="Result" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" IsReadOnly="True" Margin="4" RequestedTheme="Dark"/>
+                </Grid>
+            </Viewbox>
+            <!--Result Level End-->
+            <Viewbox Grid.Row="5" HorizontalAlignment="Right" VerticalAlignment="Bottom" RequestedTheme="Dark">
+
+            </Viewbox>
+        </Grid>
+
+
+    </Grid>
+</Page>
+

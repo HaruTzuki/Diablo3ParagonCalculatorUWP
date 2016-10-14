@@ -1,0 +1,81 @@
+﻿<Page
+    x:Class="Diablo_3_Paragon_Calculator.About"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Diablo_3_Paragon_Calculator"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" Background="#FF292828" RequestedTheme="Dark">
+    <Page.BottomAppBar>
+        <CommandBar>
+            <AppBarButton x:Name="settingsBtn" Icon="Help" Click="settingsBtn_Click" />
+            <AppBarButton x:Name="shareBtn" Label="Share" Click="AppBarButton_Click" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                <AppBarButton.Icon>
+                    <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE72D;"/>
+                </AppBarButton.Icon>
+            </AppBarButton>
+            <AppBarButton x:Name="calcBtn" Icon="Calculator" Click="calcBtn_Click" />
+        </CommandBar>
+    </Page.BottomAppBar>
+
+    <Grid Loaded="Grid_Loaded">
+        <Grid.Background>
+            <ImageBrush Stretch="UniformToFill" ImageSource="Assets/about.jpg"/>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <!--First Data-->
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*"/>
+                <!--Photo-->
+                <ColumnDefinition Width="7*"/>
+                <!--Info-->
+            </Grid.ColumnDefinitions>
+            <Image x:Name="developImg" Grid.Column="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Source="Assets/logo.png" />
+            <Viewbox Grid.Column="1">
+                <Grid RequestedTheme="Light">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <TextBlock x:Name="developName_1" Grid.Column="0" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Right" Text="Developed by:" Margin="4" RequestedTheme="Dark"/>
+                    <TextBlock x:Name="build_1" Grid.Column="0" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Right" Text="Build:" Margin="4" RequestedTheme="Dark"/>
+                    <TextBlock x:Name="date_1" Grid.Column="0" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Right" Text="Released:" Margin="4" RequestedTheme="Dark"/>
+                    <TextBlock x:Name="version_1" Grid.Column="0" Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Right" Text="Version:" Margin="4" RequestedTheme="Dark"/>
+
+                    <TextBlock x:Name="developName_2" Grid.Column="1" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Left" Text="Vlachopoulos D." Margin="4" RequestedTheme="Dark"/>
+                    <TextBlock x:Name="build_2" Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Left" Text="1001" Margin="4" RequestedTheme="Dark"/>
+                    <TextBlock x:Name="date_2" Grid.Column="1" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Left" Text="04 Jul 2016" Margin="4" RequestedTheme="Dark"/>
+                    <TextBlock x:Name="version_2" Grid.Column="1" Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Left" Text="1.1" Margin="4" RequestedTheme="Dark"/>
+                </Grid>
+
+            </Viewbox>
+        </Grid>
+        <!--First End-->
+        <!--Second First-->
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="6*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Column="1">
+                <RichTextBlock x:Name="Copyright" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" TextAlignment="Center" Margin="4" FontSize="18" RequestedTheme="Dark"/>
+            </Grid>
+
+        </Grid>
+        <!--Second End-->
+
+    </Grid>
+</Page>
